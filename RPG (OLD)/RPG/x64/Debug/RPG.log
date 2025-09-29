@@ -1,0 +1,273 @@
+﻿  Functions.cpp
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(12,20): error C2061: syntax error: identifier 'string'
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,33): warning C4042: 'string': has bad storage class
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,40): error C2146: syntax error: missing ')' before identifier 'str'
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,40): error C3646: 'str': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,45): error C2062: type 'int' unexpected
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,29): warning C4042: 'string': has bad storage class
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,36): error C2146: syntax error: missing ')' before identifier 'str_1'
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,36): error C3646: 'str_1': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,50): error C3646: 'str_2': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,55): error C2059: syntax error: ')'
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(40,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(40,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(41,9): error C3646: 'race': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(41,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(42,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(42,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(44,9): error C3646: 'description_low_health': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(44,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(45,9): error C3646: 'description_medium_health': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(45,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(46,9): error C3646: 'description_normal_health': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(46,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(74,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(74,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(75,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(75,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(84,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(84,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(85,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(85,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(90,7): error C2061: syntax error: identifier 'string'
+  (compiling source file 'Functions.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(90,2): error C2535: 'Room::Room(void)': member function already defined or declared
+  (compiling source file 'Functions.cpp')
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(88,2):
+      see declaration of 'Room::Room'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(9,20): error C2761: 'int Custom_String::Length(void)': redeclaration of member is not allowed
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(9,34): error C2146: syntax error: missing ')' before identifier 'str'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(10,1): error C2143: syntax error: missing ';' before '{'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(10,1): error C2447: '{': missing function header (old-style formal list?)
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,40): warning C4042: 'string': has bad storage class
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,47): error C2146: syntax error: missing ')' before identifier 'str'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,47): error C3646: 'str': unknown override specifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,21): error C2761: 'char Custom_String::CharacterAt(int)': redeclaration of member is not allowed
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,52): error C2062: type 'int' unexpected
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(14,68): error C2059: syntax error: ')'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(15,1): error C2143: syntax error: missing ';' before '{'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(15,1): error C2447: '{': missing function header (old-style formal list?)
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(19,21): error C2761: 'bool Custom_String::EqualTo(int)': redeclaration of member is not allowed
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(19,29): error C2065: 'String': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(19,36): error C2146: syntax error: missing ')' before identifier 'str_1'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(20,1): error C2143: syntax error: missing ';' before '{'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(20,1): error C2447: '{': missing function header (old-style formal list?)
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(57,42): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(65,4): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(65,18): error C2065: 'description_normal_health': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(71,4): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(71,18): error C2065: 'description_medium_health': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(77,4): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(77,18): error C2065: 'description_low_health': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(83,4): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(89,2): error C2065: 'name': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(90,2): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(98,7): error C2511: 'Room::Room(std::string,std::string,Item [])': overloaded member function not found in 'Room'
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(81,7):
+      see declaration of 'Room'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(100,2): error C2065: 'name': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(101,2): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(107,2): error C2065: 'name': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(108,2): error C2065: 'description': undeclared identifier
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Functions.cpp(123,22): error C2039: 'description': is not a member of 'Room'
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(81,7):
+      see declaration of 'Room'
+  
+  Main.cpp
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(12,20): error C2061: syntax error: identifier 'string'
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,33): warning C4042: 'string': has bad storage class
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,40): error C2146: syntax error: missing ')' before identifier 'str'
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,40): error C3646: 'str': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,45): error C2062: type 'int' unexpected
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,29): warning C4042: 'string': has bad storage class
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,36): error C2146: syntax error: missing ')' before identifier 'str_1'
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,36): error C3646: 'str_1': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,50): error C3646: 'str_2': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,55): error C2059: syntax error: ')'
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(40,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(40,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(41,9): error C3646: 'race': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(41,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(42,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(42,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(44,9): error C3646: 'description_low_health': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(44,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(45,9): error C3646: 'description_medium_health': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(45,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(46,9): error C3646: 'description_normal_health': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(46,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(74,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(74,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(75,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(75,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(84,9): error C3646: 'name': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(84,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(85,9): error C3646: 'description': unknown override specifier
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(85,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(90,7): error C2061: syntax error: identifier 'string'
+  (compiling source file 'Main.cpp')
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(90,2): error C2535: 'Room::Room(void)': member function already defined or declared
+  (compiling source file 'Main.cpp')
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(88,2):
+      see declaration of 'Room::Room'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(15,25): error C2660: 'Custom_String::Length': function does not take 1 arguments
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(12,13):
+      see declaration of 'Custom_String::Length'
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(15,25):
+      while trying to match the argument list '(const char [6])'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(15,7): error C2088: built-in operator '<<' cannot be applied to an operand of type 'std::ostream'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(18,25): error C2660: 'Custom_String::CharacterAt': function does not take 2 arguments
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(14,14):
+      see declaration of 'Custom_String::CharacterAt'
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(18,25):
+      while trying to match the argument list '(const char [6], int)'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(18,7): error C2088: built-in operator '<<' cannot be applied to an operand of type 'std::ostream'
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(21,25): error C2660: 'Custom_String::EqualTo': function does not take 2 arguments
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Header.h(16,14):
+      see declaration of 'Custom_String::EqualTo'
+      D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(21,25):
+      while trying to match the argument list '(const char [6], const char [6])'
+  
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(21,32): warning C4804: '<<': unsafe use of type 'bool' in operation
+D:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\RPG\RPG\Main.cpp(21,7): error C2088: built-in operator '<<' cannot be applied to an operand of type 'std::ostream'
+  Generating Code...

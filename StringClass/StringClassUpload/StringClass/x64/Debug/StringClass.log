@@ -1,0 +1,9 @@
+﻿  Functions.cpp
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(25,19): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(80,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(96,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(113,41): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(116,36): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(257,53): warning C4806: '!=': unsafe operation: no value of type 'bool' promoted to type 'const unsigned __int64' can equal the given constant
+F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\StringClass\Functions.cpp(351,25): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  StringClass.vcxproj -> F:\AIE (Academy Of Interactive Entertainment)\Visual Studios 2022\Projects\StringClass\StringClass\x64\Debug\StringClass.exe

@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Def.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Def.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "notes.cpp",
+              "DocumentMoniker": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\notes.cpp",
+              "RelativeDocumentMoniker": "StringClass\\notes.cpp",
+              "ToolTip": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\notes.cpp",
+              "RelativeToolTip": "StringClass\\notes.cpp",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAACcAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-23T15:50:23.044Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Def.h",
+              "DocumentMoniker": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Def.h",
+              "RelativeDocumentMoniker": "StringClass\\Def.h",
+              "ToolTip": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Def.h",
+              "RelativeToolTip": "StringClass\\Def.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-09-23T14:59:33.864Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Functions.cpp",
+              "DocumentMoniker": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Functions.cpp",
+              "RelativeDocumentMoniker": "StringClass\\Functions.cpp",
+              "ToolTip": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Functions.cpp",
+              "RelativeToolTip": "StringClass\\Functions.cpp",
+              "ViewState": "AgIAAFgBAAAAAAAAAAAAAG8BAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-23T14:59:45.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Main.cpp",
+              "RelativeDocumentMoniker": "StringClass\\Main.cpp",
+              "ToolTip": "F:\\AIE (Academy Of Interactive Entertainment)\\Visual Studios 2022\\Projects\\StringClass\\StringClass\\StringClass\\Main.cpp",
+              "RelativeToolTip": "StringClass\\Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-23T14:59:39.468Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
