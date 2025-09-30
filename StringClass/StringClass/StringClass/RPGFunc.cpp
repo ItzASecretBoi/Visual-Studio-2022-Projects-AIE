@@ -37,10 +37,12 @@ int Entity::attack(Entity victim)
 
 void Entity::adjustDescription()
 {
-	// if health is >= than it's max.
-	if (health >= max_health)
+
+
+	// if health is <= 50% of it's max.
+	if (health <= max_health * 50 / 100)
 	{
-		description = description_normal_health;
+		description = description_low_health;
 	}
 
 	// if health is <= 75% of it's max.
@@ -49,10 +51,11 @@ void Entity::adjustDescription()
 		description = description_medium_health;
 	}
 
-	// if health is <= 50% of it's max.
-	else if (health <= max_health * 50 / 100)
+
+	// if health is >= than it's max.
+	else if (health >= max_health)
 	{
-		description = description_low_health;
+		description = description_normal_health;
 	}
 
 	// else function is prolly broken
@@ -71,7 +74,7 @@ Item::Item()
 	description = "Null";
 };
 
-void Item::use()
+void Item::Use()
 {
 
 }
@@ -102,6 +105,35 @@ Room::Room(string set_name, string set_description, int set_north, int set_south
 	roomWest = set_west;
 }
 
+Room::Room(string set_name, string set_description, string set_inspect, int set_north, int set_south, int set_east, int set_west)
+{
+	name = set_name;
+	description = set_description;
+
+	inspect = set_inspect;
+	roomNorth = set_north;
+	roomSouth = set_south;
+	roomEast = set_east;
+	roomWest = set_west;
+}
+
+Room::Room(string set_name, string set_description, string set_inspect, int set_north, int set_south, int set_east, int set_west, int set_north_locked, int set_south_locked, int set_east_locked, int set_west_locked)
+{
+	name = set_name;
+	description = set_description;
+
+	inspect = set_inspect;
+	roomNorth = set_north;
+	roomSouth = set_south;
+	roomEast = set_east;
+	roomWest = set_west;
+}
+
+void BandAid::Use(Player player)
+{
+	player.adjustHealth(5);
+}
+
 Locations::Locations()
 {
 // reguarding the numbers in this constructor, remember!
@@ -112,11 +144,11 @@ Locations::Locations()
 
 	// put 0 if the location is a dead end!
 
-	rooms[0] = Room("Dead End", "I didn't really go anywhere, it was a dead end...", 0, 0, 0, 0);
-	rooms[1] = Room("Ruins", "It seems like I'm in some ruins.", 0, 0, 0, 2);
+	rooms[0] = Room("Dead End", "I didn't really go anywhere, it was a dead end...", 0, 0, 0, 0);// The players current room should never ever be set to dead end, they will be softlocked...
+	rooms[1] = Room("Bedroom", "This seems to be a bedroom? I guess someone tucked me in or something... Maybe there is something of use in here?", "Theres a bed in the corner with a glint underneath it, The bed is covered in blood. But.. \nI just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n", 2, 0, 0, 0);
 	rooms[2] = Room("Kitchen", "It seems like I'm in a kitchen.", 3, 1, 0, 0);
 	rooms[3] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
-
+	rooms[4] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
 };
 
 //player funcs
@@ -160,6 +192,43 @@ void Player::Choice()
 	{
 	}
 
+	else if (convert.ToUpper(playerChoice) == "INSPECT")
+	{
+
+		cout << locations.rooms[currentRoom].inspect;
+
+		Choice();
+	}
+
+	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
+	{
+		adjustDescription();
+		cout << description;
+
+		cout << "Health: " << health << "/" << max_health << endl << endl;
+
+		Choice();
+	}
+
+	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
+	{
+		adjustDescription();
+		cout << description;
+
+		cout << "Health: " << health << "/" << max_health << endl << endl;
+
+		Choice();
+	}
+
+	else if (convert.ToUpper(playerChoice) == "INVENTORY")
+	{
+		for (int i = 0; i < inventory_size; i++)
+		{
+			cout << "Slot "<< i << ": " << inventory[i].name << endl << endl;
+		}
+		Choice();
+	}
+
 	else if (convert.ToUpper(playerChoice) == "HELP")
 	{
 		cout << "Commands:" << endl << endl;
@@ -167,6 +236,9 @@ void Player::Choice()
 		cout << "go south" << endl;
 		cout << "go east" << endl;
 		cout << "go west" << endl;
+		cout << "inspect" << endl;
+		cout << "inspect self" << endl;
+		cout << "help" << endl;
 		cout << "exit" << endl << endl;
 
 		Choice();
@@ -188,6 +260,7 @@ void Player::changeCurrentRoom(int direction)
 	// 3 = east
 	// 4 = west
 
+	// 0 is dead end logic
 	switch (direction)
 	{
 
@@ -257,19 +330,47 @@ void Player::changeCurrentRoom(int direction)
 
 Player::Player()
 {
+	name = "???";
+	health = 100;
+	max_health = 100;
 	currentRoom = 1;
+	inventory_size = 6;
 
-	cout << "*You wake up.*" << endl << endl;
+	description_low_health = "I don't think I'll make it much further, everything hurts...\n\n";
 
-	cout << "Agh, my head is throbbing..." << endl << endl;
+	description_medium_health = "I could be better, I'm a little worse for wear at the moment.\n\n";
+
+	description_normal_health = "I think I'm okay, I don't feel too bad right now.\n\n";
+
+	cout << name << ": \n" << "*You wake up.*" << endl << endl;
+
+	cout << name << ": \n" << "Agh, my head is throbbing..." << endl << endl;
 
 	cout << "*You check your surroundings.*" << endl << endl;
 
 	cout << locations.rooms[currentRoom].description << endl << endl;
 
-	cout << "Damn, what type of netflix original shit is this?" << endl << endl;
+	cout << name << ": \n" << "What type of netflix original shit is this?" << endl << endl;
 
 	cout << "*You think to yourself...*" << endl << endl;
+
+	cout << name << ": \n" << "I can't even remember my name... I think my name was.. uhh.\nEnter your name: " ;
+
+	getline(cin, name); cout << endl;
+
+	cout << name << ": \n" << "Oh right! I'm " << name << ".\nI can't believe I almost forgot that...\n\n";
+
+	cout << "Commands:" << endl;
+	cout << "go north" << endl;
+	cout << "go south" << endl;
+	cout << "go east" << endl;
+	cout << "go west" << endl;
+	cout << "inspect" << endl;
+	cout << "inspect self" << endl;
+	cout << "help" << endl;
+	cout << "exit" << endl << endl;
+
+	inventory[0] = BandAid();
 
 	Choice();
 }

@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RPG.cpp" />
     <ClCompile Include="RPGFunc.cpp" />
     <ClCompile Include="Content.cpp" />
     <ClCompile Include="StringFunc.cpp" />

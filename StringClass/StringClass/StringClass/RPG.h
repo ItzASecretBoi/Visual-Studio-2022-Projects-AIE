@@ -13,13 +13,15 @@ protected:
 	string description_low_health;
 	string description_medium_health;
 	string description_normal_health;
+	int inventory_size;
 
 public:
 
 	Entity();
 
 	// stats
-	const int max_health = 100;
+
+	int max_health = 100;
 	int health = 100;
 	int level = 1;
 	int base_damage = 1;
@@ -38,23 +40,15 @@ public:
 
 class Item
 {
-private:
+public: 
+
 	string name;
 	string description;
-public:
+
 	Item();
-	void use();
+
+	virtual void Use();
 };
-
-// never to be used or summoned, please use BaseRoom instead. 
-// This is because this original class is incapable of leading to any other room, so the player will basically be stuck...
-
-// Why did i do it like this?
-// My idea on how to make a room system is that each room would lead to another, 
-// but I can't store a room class in my room class while it's still being defined
-// so instead i just made an inherited class to store the rooms since at that point
-// its alr defined. :)
-
 
 class Room
 {
@@ -62,17 +56,29 @@ class Room
 public:
 	string name;
 	string description;
+	string inspect = "I'm not sure how to explain this room...\n\n";
 	Item items[5];
+
+
 
 	int roomNorth;
 	int	roomSouth;
 	int	roomEast;
 	int roomWest;
 
+	bool north_is_locked;
+	bool south_is_locked;
+	bool east_is_locked;
+	bool west_is_locked;
+
 
 	Room();
 
-	Room(string set_name, string set_desctription, int set_north, int set_south, int set_east, int set_west);
+	Room(string set_name, string set_description, int set_north, int set_south, int set_east, int set_west);
+
+	Room(string set_name, string set_description, string set_inspect, int set_north, int set_south, int set_east, int set_west);
+
+	Room(string set_name, string set_description, string set_inspect, int set_north, int set_south, int set_east, int set_west, int set_north_locked, int set_south_locked, int set_east_locked, int set_west_locked);
 
 };
 
@@ -82,12 +88,14 @@ public:
 
 	Locations();
 
-	Room rooms[5];
+	Room rooms[10];
 };
 
 class Player : public Entity
 {
 public:
+
+	Item inventory[6];
 
 	Locations locations;
 
@@ -101,3 +109,13 @@ public:
 
 };
 
+class BandAid : public Item
+{
+private:
+	string name;
+	string description;
+
+public:
+
+	void Use(Player player);
+};
