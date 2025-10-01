@@ -57,20 +57,18 @@ public:
 	string name;
 	string description;
 	string inspect = "I'm not sure how to explain this room...\n\n";
-	Item items[5];
-
-
 
 	int roomNorth;
 	int	roomSouth;
 	int	roomEast;
 	int roomWest;
 
-	bool north_is_locked;
-	bool south_is_locked;
-	bool east_is_locked;
-	bool west_is_locked;
+	bool north_is_locked = 0;
+	bool south_is_locked = 0;
+	bool east_is_locked = 0;
+	bool west_is_locked = 0;
 
+	bool Inspected = 0;
 
 	Room();
 
@@ -99,6 +97,8 @@ public:
 
 	Locations locations;
 
+	bool has_bedroom_key = 0;
+
 	int currentRoom = 0;
 
 	Player();
@@ -109,13 +109,9 @@ public:
 
 };
 
-class BandAid : public Item
+class Hostile : public Entity
 {
-private:
-	string name;
-	string description;
-
 public:
 
-	void Use(Player player);
+
 };

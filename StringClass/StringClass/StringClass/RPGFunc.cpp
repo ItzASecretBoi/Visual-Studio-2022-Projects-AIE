@@ -127,11 +127,11 @@ Room::Room(string set_name, string set_description, string set_inspect, int set_
 	roomSouth = set_south;
 	roomEast = set_east;
 	roomWest = set_west;
-}
 
-void BandAid::Use(Player player)
-{
-	player.adjustHealth(5);
+	north_is_locked = set_north_locked;
+	south_is_locked = set_south_locked;
+	east_is_locked = set_east_locked;
+	west_is_locked = set_west_locked;
 }
 
 Locations::Locations()
@@ -142,11 +142,11 @@ Locations::Locations()
 // 3rd postition = east
 // 4th position = west
 
-	// put 0 if the location is a dead end!
+// put 0 if the location is a dead end!
 
 	rooms[0] = Room("Dead End", "I didn't really go anywhere, it was a dead end...", 0, 0, 0, 0);// The players current room should never ever be set to dead end, they will be softlocked...
-	rooms[1] = Room("Bedroom", "This seems to be a bedroom? I guess someone tucked me in or something... Maybe there is something of use in here?", "Theres a bed in the corner with a glint underneath it, The bed is covered in blood. But.. \nI just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n", 2, 0, 0, 0);
-	rooms[2] = Room("Kitchen", "It seems like I'm in a kitchen.", 3, 1, 0, 0);
+	rooms[1] = Room("Bedroom", "This seems to be a bedroom? I guess someone tucked me in or something... Maybe there is something of use in here?", "Theres a bed in the corner with a glint, underneath it, I think its a key?\nAlso, the bed is covered in blood.\nBut... I just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n", 2, 0, 0, 0, 1, 0, 0, 0);
+	rooms[2] = Room("Kitchen", "It seems like I'm in a kitchen.", "This kitchen is disgusting dude...\n\n",  3, 1, 0, 0, 0, 0, 0, 0);
 	rooms[3] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
 	rooms[4] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
 };
@@ -195,39 +195,73 @@ void Player::Choice()
 	else if (convert.ToUpper(playerChoice) == "INSPECT")
 	{
 
+		locations.rooms[currentRoom].Inspected = true;
+
 		cout << locations.rooms[currentRoom].inspect;
 
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
-	{
-		adjustDescription();
-		cout << description;
-
-		cout << "Health: " << health << "/" << max_health << endl << endl;
-
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
-	{
-		adjustDescription();
-		cout << description;
-
-		cout << "Health: " << health << "/" << max_health << endl << endl;
-
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "INVENTORY")
-	{
-		for (int i = 0; i < inventory_size; i++)
+		if(currentRoom == 1 and has_bedroom_key == false)
 		{
-			cout << "Slot "<< i << ": " << inventory[i].name << endl << endl;
+			cout << "Take the key?\n\nYes or No?: ";
+			getline(cin, playerChoice); cout << endl;
+
+			if((convert.ToUpper(playerChoice) == "YES"))
+			{
+				cout << "**You took the key...**\n\n";
+				has_bedroom_key = true;
+				locations.rooms[currentRoom].inspect = "Theres a bed in the corner that used to have a glint underneath it, The bed is covered in blood. But.. \nI just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n";
+			}
+			if ((convert.ToUpper(playerChoice) == "NO"))
+			{
+				has_bedroom_key = false;
+			}
+			else if((convert.ToUpper(playerChoice) != "YES") or (convert.ToUpper(playerChoice) != "NO") and has_bedroom_key == 0)
+			{
+				cout << "Fuck, am I stupid? I decided not to take it...\n\n";
+				Choice();
+			}
 		}
+
 		Choice();
 	}
+
+	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
+	{
+		adjustDescription();
+		cout << description;
+
+		cout << "Health: " << health << "/" << max_health << endl << endl;
+
+		Choice();
+	}
+
+	else if (convert.ToUpper(playerChoice) == "USE")
+	{
+
+		if (currentRoom == 1 and locations.rooms[currentRoom].Inspected and has_bedroom_key)
+		{
+			locations.rooms[currentRoom].north_is_locked = 0;
+			cout << "You use the key to unlock the door!\nFreedom, at last.\n\n";
+		}
+		else
+		{
+			cout << "I don't even have anything to use..." << endl << endl;
+		}
+
+		Choice();
+	}
+
+	else if (convert.ToUpper(playerChoice) == "EXIT" or convert.ToUpper(playerChoice) == "QUIT")
+	{
+	}
+
+	//else if (convert.ToUpper(playerChoice) == "INVENTORY")
+	//{
+	//	for (int i = 0; i < inventory_size; i++)
+	//	{
+	//		cout << "Slot "<< i << ": " << inventory[i].name << endl << endl;
+	//	}
+	//	Choice();
+	//}
 
 	else if (convert.ToUpper(playerChoice) == "HELP")
 	{
@@ -266,7 +300,15 @@ void Player::changeCurrentRoom(int direction)
 
 	case 1:
 
-		if (locations.rooms[currentRoom].roomNorth == 0)
+		if (locations.rooms[currentRoom].north_is_locked) // if the room in this direction is locked.
+		{
+
+			currentRoom = currentRoom;
+			cout << "Of course, the door is locked..\nIf I have a key, I should probabally USE it." << endl << endl;
+			break;
+		}
+
+		if (locations.rooms[currentRoom].roomNorth == 0) // if the room in this direction is a dead end. (It is the same for all other cases.)
 		{
 
 			currentRoom = currentRoom;
@@ -279,6 +321,14 @@ void Player::changeCurrentRoom(int direction)
 		break;
 
 	case 2:
+
+		if (locations.rooms[currentRoom].south_is_locked)
+		{
+
+			currentRoom = currentRoom;
+			cout << "Of course, the door is locked..\nIf I have a key, I should probabally USE it." << endl << endl;
+			break;
+		}
 
 		if (locations.rooms[currentRoom].roomSouth == 0)
 		{
@@ -294,6 +344,14 @@ void Player::changeCurrentRoom(int direction)
 
 	case 3:
 
+		if (locations.rooms[currentRoom].east_is_locked)
+		{
+
+			currentRoom = currentRoom;
+			cout << "Of course, the door is locked..\nIf I have a key, I should probabally USE it." << endl << endl;
+			break;
+		}
+
 		if (locations.rooms[currentRoom].roomEast == 0)
 		{
 
@@ -307,6 +365,14 @@ void Player::changeCurrentRoom(int direction)
 		break;
 
 	case 4:
+
+		if (locations.rooms[currentRoom].west_is_locked)
+		{
+
+			currentRoom = currentRoom;
+			cout << "Of course, the door is locked..\nIf I have a key, I should probabally USE it." << endl << endl;
+			break;
+		}
 
 		if (locations.rooms[currentRoom].roomWest == 0)
 		{
@@ -369,8 +435,6 @@ Player::Player()
 	cout << "inspect self" << endl;
 	cout << "help" << endl;
 	cout << "exit" << endl << endl;
-
-	inventory[0] = BandAid();
 
 	Choice();
 }
