@@ -365,7 +365,7 @@ string Custom_String::ToUpper(string txt)
 			logFile << "Percentage Of Tests Passed: " << PassedPercentage << + "%" << endl << endl;
 			logFile << "LengthTest Passed?: " << LengthTest << endl << endl;
 			logFile << "CharacterAtTest Passed?: " << CharacterAtTest << endl << endl;
-			logFile << "EqualToTest Passed?: " << EqualToTest << endl << endl;
+			logFile << "EqualToTest Passed?: " << EqualToTest << endl << endl; //apple
 			logFile << "PrependTest Passed?: " << PrependTest << endl << endl;
 			logFile << "AppendTest Passed?: " << AppendTest << endl << endl;
 			logFile << "ToLowerTest Passed?: " << ToLowerTest << endl << endl;
