@@ -406,7 +406,7 @@ Player::Player()
 
 	description_medium_health = "I could be better, I'm a little worse for wear at the moment.\n\n";
 
-	description_normal_health = "I think I'm okay, I don't feel too bad right now.\n\n";
+	description_normal_health = "I think I'm okay, I don't feel too bad right now.\n\n"; //apple
 
 	cout << name << ": \n" << "*You wake up.*" << endl << endl;
 
