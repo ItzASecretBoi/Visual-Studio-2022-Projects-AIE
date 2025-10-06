@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\",
+  "WorkspaceRootPath": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\RPGFunc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\RPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Content.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Content.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\RPGMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\notes.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\LootTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\RPGFunc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\RPG.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E1770E9A-4777-41DD-BA07-9D3F32A51F49}|StringClass\\StringClass.vcxproj|solutionrelative:StringClass\\LootTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,30 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "notes.cpp",
-              "DocumentMoniker": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\notes.cpp",
-              "RelativeDocumentMoniker": "StringClass\\notes.cpp",
-              "ToolTip": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\notes.cpp",
-              "RelativeToolTip": "StringClass\\notes.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-23T15:50:23.044Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main.cpp",
-              "DocumentMoniker": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp",
-              "RelativeDocumentMoniker": "StringClass\\Main.cpp",
-              "ToolTip": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp",
-              "RelativeToolTip": "StringClass\\Main.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "RPGMain.cpp",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGMain.cpp",
+              "RelativeDocumentMoniker": "StringClass\\RPGMain.cpp",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGMain.cpp",
+              "RelativeToolTip": "StringClass\\RPGMain.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-29T20:22:39.279Z",
               "IsPinned": true,
@@ -61,42 +56,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RPG.h",
-              "DocumentMoniker": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h",
               "RelativeDocumentMoniker": "StringClass\\RPG.h",
-              "ToolTip": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPG.h",
               "RelativeToolTip": "StringClass\\RPG.h",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-29T14:59:14.129Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Game.h",
+              "RelativeDocumentMoniker": "StringClass\\Game.h",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Game.h",
+              "RelativeToolTip": "StringClass\\Game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-06T19:56:21.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "RPGFunc.cpp",
-              "DocumentMoniker": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp",
               "RelativeDocumentMoniker": "StringClass\\RPGFunc.cpp",
-              "ToolTip": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\RPGFunc.cpp",
               "RelativeToolTip": "StringClass\\RPGFunc.cpp",
-              "ViewState": "AgIAAEICAAAAAAAAAAAwwFECAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAHMCAAAAAAAAAAAAAIwCAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-29T20:22:41.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Content.cpp",
-              "DocumentMoniker": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Content.cpp",
-              "RelativeDocumentMoniker": "StringClass\\Content.cpp",
-              "ToolTip": "C:\\Users\\itzas\\OneDrive\\Documents\\GitHub\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Content.cpp",
-              "RelativeToolTip": "StringClass\\Content.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "LootTable.h",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.h",
+              "RelativeDocumentMoniker": "StringClass\\LootTable.h",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.h",
+              "RelativeToolTip": "StringClass\\LootTable.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-06T19:56:31.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LootTable.cpp",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.cpp",
+              "RelativeDocumentMoniker": "StringClass\\LootTable.cpp",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\LootTable.cpp",
+              "RelativeToolTip": "StringClass\\LootTable.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-29T17:47:19.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp",
+              "RelativeDocumentMoniker": "StringClass\\Main.cpp",
+              "ToolTip": "C:\\Users\\s258049\\source\\repos\\Visual-Studio-2022-Projects-AIE\\StringClass\\StringClass\\StringClass\\Main.cpp",
+              "RelativeToolTip": "StringClass\\Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-06T21:33:47.308Z",
               "EditorCaption": ""
             }
           ]

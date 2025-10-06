@@ -68,6 +68,8 @@ public:
 
 	string death_dialogue;
 
+	int xpDrop = 0;
+
 };
 
 
@@ -134,6 +136,8 @@ public:
 
 	int currentRoom = 0;
 
+	int currentXP = 0;
+
 	Player();
 
 	void changeCurrentRoom(int ChangedRoom);
@@ -143,3 +147,8 @@ public:
 };
 
 
+int levelUp(float level, float currentXP);
+
+void displayStats(float currentXP);
+
+int XPForNextLevel(float level);

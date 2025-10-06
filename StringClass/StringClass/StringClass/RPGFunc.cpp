@@ -186,6 +186,7 @@ Locations::Locations()
 	rooms[2].room_Has_Bandage = 1;
 
 	rooms[2].enemy.name = "Robert";
+	rooms[2].enemy.xpDrop = 500;
 	rooms[2].enemy.race = "Rat";
 	rooms[2].enemy.description = "It's a rat.";
 	rooms[2].enemy.health = 25;
@@ -225,13 +226,10 @@ void Player::Choice()
 	while(true)
 	{
 
-		if (health <= 0)
-		{
-			cout << "YOU DIED!" << endl << endl;
-			break;
-		}
+		level = levelUp(level, currentXP);
+
 		
-		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile and locations.rooms[currentRoom].enemy.name == "Qwentin")
+		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile and locations.rooms[currentRoom].enemy.name == "Qwentin") // special check for if the enemy is Qwentin, if so kill the player upon his death.
 		{
 			locations.rooms[currentRoom].room_Has_Hostile = false;
 			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
@@ -242,6 +240,7 @@ void Player::Choice()
 		{
 			locations.rooms[currentRoom].room_Has_Hostile = false;
 			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
+			currentXP += locations.rooms[currentRoom].enemy.xpDrop;
 			continue;
 		}
 
@@ -250,11 +249,13 @@ void Player::Choice()
 			cout << "You are in combat with " << locations.rooms[currentRoom].enemy.name << "!" << endl << endl;
 			cout << locations.rooms[currentRoom].enemy.name << "'s Health: " << locations.rooms[currentRoom].enemy.health << endl;
 			cout << locations.rooms[currentRoom].enemy.name << "'s Race: " << locations.rooms[currentRoom].enemy.race << endl;
-			cout << locations.rooms[currentRoom].enemy.name << "'s ATK: " << locations.rooms[currentRoom].enemy.base_damage << endl << endl;
+			cout << locations.rooms[currentRoom].enemy.name << "'s ATK: " << locations.rooms[currentRoom].enemy.base_damage << endl;
+			cout << locations.rooms[currentRoom].enemy.name << "'s LVL: " << locations.rooms[currentRoom].enemy.level << endl << endl;
 
-			cout << name << "'s Health: " << health << endl;
-			cout << name << "'s Race: " << race << endl;
-			cout << name << "'s ATK: " << base_damage << endl << endl;
+			cout << name << "'s HP: " << health << endl;
+			cout << name << "'s RACE: " << race << endl;
+			cout << name << "'s ATK: " << base_damage << endl;
+			cout << name << "'s LVL: " << level << endl << endl;
 
 			cout << "Tip: Your command set has changed! Use command 'help' to view your options" << endl;
 			cout << "**You cannot move until combat has ended.**" << endl << endl;
@@ -355,6 +356,11 @@ void Player::Choice()
 			cout << description;
 
 			cout << "Health: " << health << "/" << max_health << endl << endl;
+
+			cout << name << "'s HP: " << health << endl;
+			cout << name << "'s RACE: " << race << endl;
+			cout << name << "'s ATK: " << base_damage << endl;
+			cout << name << "'s LVL: " << level << endl << endl;
 
 		}
 
@@ -467,6 +473,7 @@ void Player::changeCurrentRoom(int direction)
 			break;
 		}
 		break;
+
 	case 2:
 
 		if (locations.rooms[currentRoom].south_is_locked)
@@ -500,6 +507,7 @@ void Player::changeCurrentRoom(int direction)
 			break;
 		}
 		break;
+
 	case 3:
 
 		if (locations.rooms[currentRoom].east_is_locked)
@@ -533,6 +541,7 @@ void Player::changeCurrentRoom(int direction)
 			break;
 		}
 		break;
+
 	case 4:
 
 		if (locations.rooms[currentRoom].west_is_locked)
@@ -620,4 +629,32 @@ Player::Player()
 	cout << "exit" << endl << endl;
 
 	Choice();
+}
+
+int XPForNextLevel(float level)
+{
+	const float multiplier = 1.5;
+	float neededXP;
+
+	neededXP = pow(level, multiplier);
+	return neededXP;
+}
+
+int levelUp(float level, float currentXP)
+{
+
+	if (currentXP >= XPForNextLevel(level))
+	{
+		return level + 1;
+	}
+	else
+	{
+		return level;
+	}
+
+}
+
+void displayStats(float currentXP)
+{
+	cout << "XP until next level: " << currentXP << "/" << XPForNextLevel(currentXP) << endl << endl;
 }

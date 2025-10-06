@@ -128,16 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="LootTable.h" />
     <ClInclude Include="RPG.h" />
     <ClInclude Include="StringClass.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RPGMain.cpp" />
     <ClCompile Include="RPG.cpp" />
     <ClCompile Include="RPGFunc.cpp" />
-    <ClCompile Include="Content.cpp" />
+    <ClCompile Include="LootTable.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="StringFunc.cpp" />
-    <ClCompile Include="notes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
