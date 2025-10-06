@@ -4,8 +4,6 @@
 #include "StringClass.h"
 #include "RPG.h"
 
-#ifndef  StringClass_H
-#define StringClass_H
 using namespace std;
 
 //entity funcs
@@ -26,11 +24,13 @@ int Entity::getHealth()
 
 int Entity::adjustHealth(int adjustment)
 {
-	return health += adjustment;
+	health += adjustment;
 	adjustDescription();
+	return health;
 }
 
-int Entity::attack(Entity victim)
+
+int Entity::attack(Entity& victim)
 {
 	return victim.adjustHealth(base_damage + level * 0.5);
 }
@@ -74,9 +74,20 @@ Item::Item()
 	description = "Null";
 };
 
-void Item::Use()
+int Item::Use()
 {
+	return 0;
+}
 
+Bandage::Bandage() 
+{
+	name = "Bandage";
+	description = "Heals 10 HP.";
+}
+
+int Bandage::Use()
+{
+	return 10;
 }
 
 //room funcs
@@ -144,147 +155,272 @@ Locations::Locations()
 
 // put 0 if the location is a dead end!
 
-	rooms[0] = Room("Dead End", "I didn't really go anywhere, it was a dead end...", 0, 0, 0, 0);// The players current room should never ever be set to dead end, they will be softlocked...
-	rooms[1] = Room("Bedroom", "This seems to be a bedroom? I guess someone tucked me in or something... Maybe there is something of use in here?", "Theres a bed in the corner with a glint, underneath it, I think its a key?\nAlso, the bed is covered in blood.\nBut... I just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n", 2, 0, 0, 0, 1, 0, 0, 0);
-	rooms[2] = Room("Kitchen", "It seems like I'm in a kitchen.", "This kitchen is disgusting dude...\n\n",  3, 1, 0, 0, 0, 0, 0, 0);
-	rooms[3] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
-	rooms[4] = Room("Broom Closet", "It seems like I'm in a broom closet.", 0, 2, 0, 0);
-};
+
+	//Dead End
+	rooms[0].name = "Dead End";
+	rooms[0].description = "I didn't really go anywhere, it was a dead end...";
+	rooms[0].roomNorth = 0;
+	rooms[0].roomSouth = 0;
+	rooms[0].roomEast = 0;
+	rooms[0].roomWest = 0;
+
+	//Bedroom
+	rooms[1].name = "Bedroom";
+	rooms[1].description = "This seems to be a bedroom? I guess someone tucked me in or something... Maybe there is something of use in here?";
+	rooms[1].inspect = "Theres a bed in the corner with a glint, underneath it, I think its a key?\nAlso, the bed is covered in blood.\nBut... I just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n";
+	rooms[1].roomNorth = 2;
+	rooms[1].roomSouth = 0;
+	rooms[1].roomEast = 0;
+	rooms[1].roomWest = 0;
+	rooms[1].north_is_locked = true;
+
+	//Hallway
+	rooms[2].name = "Hallway.";
+	rooms[2].description = "Now I'm in a hallway.";
+	rooms[2].inspect = "This hallway is disgusting dude... But hey, atleast I found a bandage in a cabinet nearby!\n\n";
+	rooms[2].roomNorth = 3;
+	rooms[2].roomSouth = 3;
+	rooms[2].roomEast = 3;
+	rooms[2].roomWest = 3;
+	rooms[2].room_Has_Hostile = true;
+	rooms[2].room_Has_Bandage = 1;
+
+	rooms[2].enemy.name = "Robert";
+	rooms[2].enemy.race = "Rat";
+	rooms[2].enemy.description = "It's a rat.";
+	rooms[2].enemy.health = 25;
+	rooms[2].enemy.base_damage = 2;
+	rooms[2].enemy.death_dialogue = "The grotesque rat turns into a messy morsel under your foot... ";
+	rooms[2].enemy.encounter_dialogue = "Now I'm in a hallway, but.. theres a silhouette in the distance..\nI try to make it out and.. It's a Grotesque Rat! ";
+
+	//DLC
+	rooms[3].name = "Boss Room";
+	rooms[3].description = "The walls in this direction are just covered in the text that say\n'ROOM INACCCESSIBLE: PREORDER DLC - ONLY 9.8MIL! BUY NOW!'.\nWhat a lazy dev dude...";
+	rooms[3].roomNorth = 0;
+	rooms[3].roomSouth = 0;
+	rooms[3].roomEast = 0;
+	rooms[3].roomWest = 0;
+
+	rooms[3].room_Has_Hostile = true;
+	rooms[3].room_Has_Bandage = 1;
+
+	rooms[3].enemy.name = "Qwentin";
+	rooms[3].enemy.race = "Human";
+	rooms[3].enemy.description = "It's a loser.";
+	rooms[3].enemy.health = 1;
+	rooms[3].enemy.base_damage = 1;
+	rooms[3].enemy.death_dialogue = "He exploded tragically killing you both, pay 3000$ USD for the rest of the lore. :)\n\n";
+	rooms[3].enemy.encounter_dialogue = "Now I'm in a dark room, but.. theres a silhouette in the distance..\nI try to make it out and.. It's a Decrepid Human! ";
+
+}
 
 //player funcs
 
 void Player::Choice()
 {
 
-	cout << "What should I do?" << endl << endl;
-
 	string playerChoice = "";
-	getline(cin, playerChoice); cout << endl;
 	Custom_String convert;
 
-
-
-	if (convert.ToUpper(playerChoice) == "GO NORTH")
-	{
-		changeCurrentRoom(1);
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "GO SOUTH")
-	{
-		changeCurrentRoom(2);
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "GO EAST")
-	{
-		changeCurrentRoom(3);
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "GO WEST")
-	{
-		changeCurrentRoom(4);
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "EXIT")
-	{
-	}
-
-	else if (convert.ToUpper(playerChoice) == "INSPECT")
+	while(true)
 	{
 
-		locations.rooms[currentRoom].Inspected = true;
-
-		cout << locations.rooms[currentRoom].inspect;
-
-		if(currentRoom == 1 and has_bedroom_key == false)
+		if (health <= 0)
 		{
-			cout << "Take the key?\n\nYes or No?: ";
-			getline(cin, playerChoice); cout << endl;
+			cout << "YOU DIED!" << endl << endl;
+			break;
+		}
+		
+		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile and locations.rooms[currentRoom].enemy.name == "Qwentin")
+		{
+			locations.rooms[currentRoom].room_Has_Hostile = false;
+			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
+			break;
+		}
 
-			if((convert.ToUpper(playerChoice) == "YES"))
+		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			locations.rooms[currentRoom].room_Has_Hostile = false;
+			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
+			continue;
+		}
+
+		if (locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			cout << "You are in combat with " << locations.rooms[currentRoom].enemy.name << "!" << endl << endl;
+			cout << locations.rooms[currentRoom].enemy.name << "'s Health: " << locations.rooms[currentRoom].enemy.health << endl;
+			cout << locations.rooms[currentRoom].enemy.name << "'s Race: " << locations.rooms[currentRoom].enemy.race << endl;
+			cout << locations.rooms[currentRoom].enemy.name << "'s ATK: " << locations.rooms[currentRoom].enemy.base_damage << endl << endl;
+
+			cout << name << "'s Health: " << health << endl;
+			cout << name << "'s Race: " << race << endl;
+			cout << name << "'s ATK: " << base_damage << endl << endl;
+
+			cout << "Tip: Your command set has changed! Use command 'help' to view your options" << endl;
+			cout << "**You cannot move until combat has ended.**" << endl << endl;
+		}
+
+		cout << "What should I do?" << endl << endl;
+
+		getline(cin, playerChoice); cout << endl;
+
+		if (convert.ToUpper(playerChoice) == "GO NORTH" and (locations.rooms[currentRoom].room_Has_Hostile == false))
+		{
+			changeCurrentRoom(1);
+			continue;
+		}
+
+		else if (convert.ToUpper(playerChoice) == "ATTACK" and (locations.rooms[currentRoom].room_Has_Hostile == true))
+		{
+			locations.rooms[currentRoom].enemy.adjustHealth(-base_damage);
+			adjustHealth(-locations.rooms[currentRoom].enemy.base_damage);
+			continue;
+		}
+
+		else if (convert.ToUpper(playerChoice) == "GO SOUTH" and (locations.rooms[currentRoom].room_Has_Hostile == false))
+		{
+			changeCurrentRoom(2);
+			continue;
+		}
+
+		else if (convert.ToUpper(playerChoice) == "GO EAST" and (locations.rooms[currentRoom].room_Has_Hostile == false))
+		{
+			changeCurrentRoom(3);
+			continue;
+		}
+
+		else if (convert.ToUpper(playerChoice) == "GO WEST" and (locations.rooms[currentRoom].room_Has_Hostile == false))
+		{
+			changeCurrentRoom(4);
+			continue;
+		}
+
+
+		else if (convert.ToUpper(playerChoice) == "INSPECT")
+		{
+
+			locations.rooms[currentRoom].Inspected = true;
+
+			cout << locations.rooms[currentRoom].inspect;
+
+			if (currentRoom == 1 and has_bedroom_key == false)
 			{
-				cout << "**You took the key...**\n\n";
-				has_bedroom_key = true;
-				locations.rooms[currentRoom].inspect = "Theres a bed in the corner that used to have a glint underneath it, The bed is covered in blood. But.. \nI just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n";
+				cout << "Take the key?\n\nYes or No?: ";
+				getline(cin, playerChoice); cout << endl;
+
+				if ((convert.ToUpper(playerChoice) == "YES"))
+				{
+					cout << "**You took the key...**\n\n";
+					has_bedroom_key = true;
+					locations.rooms[currentRoom].inspect = "Theres a bed in the corner that used to have a glint underneath it, The bed is covered in blood. But.. \nI just woke up from there... \n\nThis room is enclosed, but theres a door facing NORTH.\nGoing any other direction would be pointless.\n\n";
+					continue;
+				}
+				if ((convert.ToUpper(playerChoice) == "NO"))
+				{
+					has_bedroom_key = false;
+				}
+				else if ((convert.ToUpper(playerChoice) != "YES") or (convert.ToUpper(playerChoice) != "NO") and has_bedroom_key == 0)
+				{
+					cout << "Fudgewinkle, am I stupid? I decided not to take it...\n\n";
+					continue;
+				}
 			}
-			if ((convert.ToUpper(playerChoice) == "NO"))
+
+		}
+
+
+		else if (convert.ToUpper(playerChoice) == "COUNTER" and (locations.rooms[currentRoom].room_Has_Hostile == true))
+		{
+			locations.rooms[currentRoom].enemy.adjustHealth(-base_damage);
+
+			int chance = rand() % 2;
+
+			if (chance == 1)
 			{
-				has_bedroom_key = false;
+				locations.rooms[currentRoom].enemy.adjustHealth(-(base_damage * 2));
+				cout << "Counter Success! (50% chance)" << endl << endl;
 			}
-			else if((convert.ToUpper(playerChoice) != "YES") or (convert.ToUpper(playerChoice) != "NO") and has_bedroom_key == 0)
+
+			else
 			{
-				cout << "Fuck, am I stupid? I decided not to take it...\n\n";
-				Choice();
+				adjustHealth(-locations.rooms[currentRoom].enemy.base_damage);
+				cout << "Counter Failed! (50% chance)" << endl << endl;
+			}
+
+		}
+
+		else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
+		{
+			adjustDescription();
+			cout << description;
+
+			cout << "Health: " << health << "/" << max_health << endl << endl;
+
+		}
+
+		else if (convert.ToUpper(playerChoice) == "USE")
+		{
+
+			if (currentRoom == 1 and locations.rooms[currentRoom].Inspected and has_bedroom_key)
+			{
+				locations.rooms[currentRoom].north_is_locked = 0;
+				cout << "You use the key to unlock the door!\nFreedom, at last.\n\n";
+			}
+
+			else if (currentRoom == 2 and locations.rooms[currentRoom].Inspected and locations.rooms[currentRoom].room_Has_Bandage)
+			{
+				health += locations.rooms[currentRoom].roomBandage.Use();
+				locations.rooms[currentRoom].room_Has_Bandage = false;
+				cout << "Bandage Used!\n\n";
+				locations.rooms[currentRoom].inspect = "This hallway is disgusting dude... There was a bandage here but I used it.\n\n";
+			}
+
+			else
+			{
+				cout << "I don't even have anything to use..." << endl << endl;
 			}
 		}
 
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "INSPECT SELF")
-	{
-		adjustDescription();
-		cout << description;
-
-		cout << "Health: " << health << "/" << max_health << endl << endl;
-
-		Choice();
-	}
-
-	else if (convert.ToUpper(playerChoice) == "USE")
-	{
-
-		if (currentRoom == 1 and locations.rooms[currentRoom].Inspected and has_bedroom_key)
+		else if (convert.ToUpper(playerChoice) == "EXIT" or convert.ToUpper(playerChoice) == "QUIT")
 		{
-			locations.rooms[currentRoom].north_is_locked = 0;
-			cout << "You use the key to unlock the door!\nFreedom, at last.\n\n";
+			break;
 		}
+
+
+		else if (convert.ToUpper(playerChoice) == "HELP" and locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			cout << "Commands:" << endl << endl;
+			cout << "attack" << endl;
+			cout << "counter (50% chance)" << endl;
+			cout << "inspect" << endl;
+			cout << "inspect self" << endl;
+			cout << "help" << endl;
+			cout << "exit" << endl << endl;
+
+		}
+
+		else if (convert.ToUpper(playerChoice) == "HELP")
+		{
+			cout << "Commands:" << endl << endl;
+			cout << "go north" << endl;
+			cout << "go south" << endl;
+			cout << "go east" << endl;
+			cout << "go west" << endl;
+			cout << "go use" << endl;
+			cout << "inspect" << endl;
+			cout << "inspect self" << endl;
+			cout << "help" << endl;
+			cout << "exit" << endl << endl;
+		}
+
 		else
 		{
-			cout << "I don't even have anything to use..." << endl << endl;
+			cout << "*You think to yourself*" << endl << endl;
+			cout << "What am I thinking? That doesn't even make sense..." << endl << endl;
+			cout << "Hint: If you need assistance with commands, use the command, 'help'." << endl << endl;
 		}
-
-		Choice();
 	}
 
-	else if (convert.ToUpper(playerChoice) == "EXIT" or convert.ToUpper(playerChoice) == "QUIT")
-	{
-	}
-
-	//else if (convert.ToUpper(playerChoice) == "INVENTORY")
-	//{
-	//	for (int i = 0; i < inventory_size; i++)
-	//	{
-	//		cout << "Slot "<< i << ": " << inventory[i].name << endl << endl;
-	//	}
-	//	Choice();
-	//}
-
-	else if (convert.ToUpper(playerChoice) == "HELP")
-	{
-		cout << "Commands:" << endl << endl;
-		cout << "go north" << endl;
-		cout << "go south" << endl;
-		cout << "go east" << endl;
-		cout << "go west" << endl;
-		cout << "inspect" << endl;
-		cout << "inspect self" << endl;
-		cout << "help" << endl;
-		cout << "exit" << endl << endl;
-
-		Choice();
-	}
-
-	else
-	{
-		cout << "*You think to yourself*" << endl << endl;
-		cout << "What am I thinking? That doesn't even make sense..." << endl << endl;
-		cout << "Hint: If you need assistance with commands, use the command, 'help'." << endl << endl;
-		Choice();
-	}
 }
 
 void Player::changeCurrentRoom(int direction)
@@ -317,9 +453,20 @@ void Player::changeCurrentRoom(int direction)
 		}
 
 		currentRoom = locations.rooms[currentRoom].roomNorth;
-		cout << locations.rooms[currentRoom].description << endl << endl;
-		break;
 
+		if(locations.rooms[currentRoom].room_Has_Hostile != true)
+		{
+			cout << locations.rooms[currentRoom].description << endl << endl;
+			break;
+		}
+
+		if (locations.rooms[currentRoom].room_Has_Hostile)
+		{
+
+			cout << locations.rooms[currentRoom].enemy.encounter_dialogue << endl << endl;
+			break;
+		}
+		break;
 	case 2:
 
 		if (locations.rooms[currentRoom].south_is_locked)
@@ -339,9 +486,20 @@ void Player::changeCurrentRoom(int direction)
 		}
 
 		currentRoom = locations.rooms[currentRoom].roomSouth;
-		cout << locations.rooms[currentRoom].description << endl << endl;
-		break;
 
+		if (locations.rooms[currentRoom].room_Has_Hostile != true)
+		{
+			cout << locations.rooms[currentRoom].description << endl << endl;
+			break;
+		}
+
+		if (locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			currentRoom = currentRoom;
+			cout << locations.rooms[currentRoom].enemy.encounter_dialogue << endl << endl;
+			break;
+		}
+		break;
 	case 3:
 
 		if (locations.rooms[currentRoom].east_is_locked)
@@ -361,9 +519,20 @@ void Player::changeCurrentRoom(int direction)
 		}
 
 		currentRoom = locations.rooms[currentRoom].roomEast;
-		cout << locations.rooms[currentRoom].description << endl << endl;
-		break;
 
+		if (locations.rooms[currentRoom].room_Has_Hostile != true)
+		{
+			cout << locations.rooms[currentRoom].description << endl << endl;
+			break;
+		}
+
+		if (locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			currentRoom = currentRoom;
+			cout << locations.rooms[currentRoom].enemy.encounter_dialogue << endl << endl;
+			break;
+		}
+		break;
 	case 4:
 
 		if (locations.rooms[currentRoom].west_is_locked)
@@ -383,9 +552,20 @@ void Player::changeCurrentRoom(int direction)
 		}
 
 		currentRoom = locations.rooms[currentRoom].roomWest;
-		cout << locations.rooms[currentRoom].description << endl << endl;
-		break;
 
+		if (locations.rooms[currentRoom].room_Has_Hostile != true)
+		{
+			cout << locations.rooms[currentRoom].description << endl << endl;
+			break;
+		}
+
+		if (locations.rooms[currentRoom].room_Has_Hostile)
+		{
+			currentRoom = currentRoom;
+			cout << locations.rooms[currentRoom].enemy.encounter_dialogue << endl << endl;
+			break;
+		}
+		break;
 	default:
 		cout << "*You think to yourself*" << endl << endl;
 		cout << "What am I thinking? That doesn't even make sense..." << endl << endl;
@@ -396,11 +576,14 @@ void Player::changeCurrentRoom(int direction)
 
 Player::Player()
 {
+
+	race = "Human";
 	name = "???";
-	health = 100;
+	health = 25;
 	max_health = 100;
 	currentRoom = 1;
 	inventory_size = 6;
+	base_damage = 5;
 
 	description_low_health = "I don't think I'll make it much further, everything hurts...\n\n";
 
@@ -416,7 +599,7 @@ Player::Player()
 
 	cout << locations.rooms[currentRoom].description << endl << endl;
 
-	cout << name << ": \n" << "What type of netflix original shit is this?" << endl << endl;
+	cout << name << ": \n" << "What type of netflix original stuff is this?" << endl << endl;
 
 	cout << "*You think to yourself...*" << endl << endl;
 
@@ -438,7 +621,3 @@ Player::Player()
 
 	Choice();
 }
-
-
-
-#endif;

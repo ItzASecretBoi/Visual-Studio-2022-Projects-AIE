@@ -4,7 +4,7 @@ using namespace std;
 class Entity
 {
 
-protected:
+public:
 	// lore stuff
 	string name;
 	string race;
@@ -14,8 +14,6 @@ protected:
 	string description_medium_health;
 	string description_normal_health;
 	int inventory_size;
-
-public:
 
 	Entity();
 
@@ -33,22 +31,47 @@ public:
 
 	int adjustHealth(int adjustment);
 
-	int attack(Entity victim);
+	virtual int attack(Entity& victim);
 
 	void adjustDescription();
 };
 
 class Item
 {
-public: 
+public:
 
 	string name;
 	string description;
 
 	Item();
 
-	virtual void Use();
+	virtual int Use();
 };
+
+
+class Bandage : public Item
+{
+public:
+
+	Bandage();
+
+	int Use() override;
+
+};
+
+class Hostile : public Entity
+{
+
+public:
+	
+	string encounter_dialogue;
+
+	string death_dialogue;
+
+};
+
+
+
 
 class Room
 {
@@ -70,6 +93,12 @@ public:
 
 	bool Inspected = 0;
 
+	Bandage roomBandage;
+
+	bool room_Has_Bandage = 0;
+
+	bool room_Has_Hostile = 0;
+
 	Room();
 
 	Room(string set_name, string set_description, int set_north, int set_south, int set_east, int set_west);
@@ -78,9 +107,12 @@ public:
 
 	Room(string set_name, string set_description, string set_inspect, int set_north, int set_south, int set_east, int set_west, int set_north_locked, int set_south_locked, int set_east_locked, int set_west_locked);
 
+
+	Hostile enemy;
+
 };
 
-class Locations : public Room
+class Locations
 {
 public:
 
@@ -88,6 +120,7 @@ public:
 
 	Room rooms[10];
 };
+
 
 class Player : public Entity
 {
@@ -109,9 +142,4 @@ public:
 
 };
 
-class Hostile : public Entity
-{
-public:
 
-
-};

@@ -1,3 +1,3 @@
 ﻿  RPGFunc.cpp
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\StringClass\StringClass\StringClass\RPGFunc.cpp(35,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  StringClass.vcxproj -> C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\StringClass\StringClass\x64\Debug\StringClass.exe
+C:\Users\itzas\OneDrive\Documents\GitHub\Visual-Studio-2022-Projects-AIE\StringClass\StringClass\StringClass\RPGFunc.cpp(35,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  StringClass.vcxproj -> C:\Users\itzas\OneDrive\Documents\GitHub\Visual-Studio-2022-Projects-AIE\StringClass\StringClass\x64\Debug\StringClass.exe
