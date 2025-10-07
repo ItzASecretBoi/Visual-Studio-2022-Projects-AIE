@@ -24,6 +24,7 @@
     <ProjectGuid>{e1770e9a-4777-41dd-ba07-9d3f32a51f49}</ProjectGuid>
     <RootNamespace>StringClass</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>RPG</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,16 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
-    <ClInclude Include="LootTable.h" />
     <ClInclude Include="RPG.h" />
     <ClInclude Include="StringClass.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RPGMain.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="RPG.cpp" />
     <ClCompile Include="RPGFunc.cpp" />
-    <ClCompile Include="LootTable.cpp" />
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="StringFunc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -585,6 +585,7 @@ void Player::changeCurrentRoom(int direction)
 
 Player::Player()
 {
+	srand(time(0));
 
 	race = "Human";
 	name = "???";
