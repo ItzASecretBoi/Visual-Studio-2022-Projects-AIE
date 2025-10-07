@@ -1,0 +1,9 @@
+﻿  RPG.cpp
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(36,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(227,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(235,16): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(239,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(258,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(258,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(617,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  InsertRPGNameHere.vcxproj -> C:\Users\s258049\source\repos\InsertRPGNameHere\x64\Debug\InsertRPGNameHere.exe
