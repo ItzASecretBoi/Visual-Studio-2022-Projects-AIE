@@ -1,0 +1,3 @@
+﻿  Functions.cpp
+C:\Users\s258049\source\repos\RNG Drop Example\Functions.cpp(13,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  RNG Drop Example.vcxproj -> C:\Users\s258049\source\repos\RNG Drop Example\x64\Debug\RNG Drop Example.exe
