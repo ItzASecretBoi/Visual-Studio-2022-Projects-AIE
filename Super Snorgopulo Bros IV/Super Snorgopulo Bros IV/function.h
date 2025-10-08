@@ -1,0 +1,33 @@
+#pragma once
+using namespace std;
+//bruh-bruh-bruh
+void dialogue1();
+void choice1();
+void countdown();
+void arrayTest();
+void arrayTest2();
+void arrayTest3();
+void constantTest();
+void playerName();
+string printLine(string text);
+int getStringLength(string string);
+bool isStringEqual(string txt_1, string txt_2);
+string convertToCAPS(string txt);
+string convertTolower(string txt);
+void welcomePlayer(string txt);
+void userCommand(string userCommand);
+void pointy();
+void maxhealth();
+void nulltest(int* input);
+void reftest();
+void doubleValue(int& num);
+void printValue(const int& num);
+void writeToFile();
+void readScore();
+void score();
+void gameStart();
+void smallGame();
+void log(string name, string text);
+void throwandcatch();
+class room;
+class item;

@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\s258049\source\repos\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(113,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Super Snorgopulo Bros IV.vcxproj -> C:\Users\s258049\source\repos\Super Snorgopulo Bros IV\x64\Debug\Super Snorgopulo Bros IV.exe

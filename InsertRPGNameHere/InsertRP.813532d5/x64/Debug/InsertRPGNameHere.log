@@ -1,0 +1,12 @@
+﻿  RPG.cpp
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.h(33,33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'RPG.cpp')
+  
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(37,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(228,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(236,16): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(240,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(259,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(259,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\InsertRPGNameHere\RPG.cpp(700,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  InsertRPGNameHere.vcxproj -> C:\Users\s258049\source\repos\InsertRPGNameHere\x64\Debug\InsertRPGNameHere.exe
