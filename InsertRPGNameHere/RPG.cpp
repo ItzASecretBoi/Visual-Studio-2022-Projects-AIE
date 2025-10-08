@@ -303,13 +303,6 @@ void Player::Choice()
 
 		else if (convert.ToUpper(playerChoice) == "ATTACK" and (locations.rooms[currentRoom].room_Has_Hostile == true))
 		{
-			locations.rooms[currentRoom].enemy.adjustHealth(-base_damage);
-			adjustHealth(-locations.rooms[currentRoom].enemy.base_damage);
-			continue;
-		}
-
-		else if (convert.ToUpper(playerChoice) == "ATTACK TEST" and (locations.rooms[currentRoom].room_Has_Hostile == true))
-		{
 			string cursor = "	V\n";
 			string attack_bar = "	=====|=====| O |=====|=====\n\n";
 			int bonus_damage = 0;
@@ -325,10 +318,12 @@ void Player::Choice()
 				{
 					_getch();
 
-					locations.rooms[currentRoom].enemy.adjustHealth(-base_damage + bonus_damage);
-					adjustHealth(-locations.rooms[currentRoom].enemy.base_damage);a
+					locations.rooms[currentRoom].enemy.adjustHealth(-(final_damage + bonus_damage));
+					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
 
 					cout << "You got " << bonus_damage << " extra damage!\n\n" << attackbonustype;
+
+					cout << "Total Damage: " << final_damage + bonus_damage << "\n\n";
 
 					input = 1;
 					continue;
@@ -355,28 +350,34 @@ void Player::Choice()
 					attackbonustype = "GARBAGE HIT!\n\n";
 				}
 
-				if (i < 11 and i > 5) // ok damage
+				if (i <= 11 and i > 5) // ok damage
 				{
 					bonus_damage = 2;
 					attackbonustype = "OK HIT!\n\n";
 				}
 
-				if (i > 11 and i < 15) // crit damage
+				if (i >= 11 and i < 15) // crit damage
 				{
 					bonus_damage = 6;
 					attackbonustype = "CRIT HIT!\n\n";
 				}
 
-				if (i > 15 and i < 21) // ok damage
+				if (i >= 15 and i < 21) // ok damage
 				{
 					bonus_damage = 2;
 					attackbonustype = "OK HIT!\n\n";
 				}
 
-				if (i > 21 and i < 26) // dookie damage
+				if (i >= 21 and i < 26) // dookie damage
 				{
 					bonus_damage = 0;
 					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i == 13)// Crit+ damage
+				{
+					bonus_damage = 8;
+					attackbonustype = "CRIT++ HIT!\n\n";
 				}
 
 				cursor = " " + cursor;
@@ -698,13 +699,14 @@ void Player::changeCurrentRoom(int direction)
 Player::Player()
 {
 	srand(time(0));
+	srand(time(0));
 
 	name = "???";
 	nametag = name + ":\n";
 	race = "Human";
 	health = 25;
 	max_health = 100;
-	currentRoom = 1;
+	currentRoom = 2;
 	inventory_size = 6;
 	base_damage = 5;
 
