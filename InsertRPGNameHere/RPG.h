@@ -30,7 +30,7 @@ public:
 	int health = 100;
 	int level = 1;
 	int base_damage = 1 ;
-	int final_damage = base_damage + level * 1.5;
+	float final_damage = (int)((base_damage + level) * 1.5);
 
 	// funcs
 	int setHealth(int newHealth);
@@ -78,6 +78,7 @@ public:
 
 	int xpDrop = 0;
 
+	bool encountered = false;
 };
 
 

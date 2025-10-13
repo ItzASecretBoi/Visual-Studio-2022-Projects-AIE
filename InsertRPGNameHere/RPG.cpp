@@ -244,7 +244,7 @@ int Player::levelUp(float level, float currentXP)
 
 void Player::displayStats(float currentXP)
 {
-	cout << "XP until next level: " << currentXP << "/" << XPForNextLevel(currentXP) << endl << endl;
+	speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "XP until next level: " + to_string(currentXP) + "/" + to_string(XPForNextLevel(currentXP)) + speak.RESET, 1);
 }
 
 void Player::Choice()
@@ -262,34 +262,59 @@ void Player::Choice()
 		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile and locations.rooms[currentRoom].enemy.name == "Qwentin") // special check for if the enemy is Qwentin, if so kill the player upon his death.
 		{
 			locations.rooms[currentRoom].room_Has_Hostile = false;
-			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
+			speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + locations.rooms[currentRoom].enemy.death_dialogue + speak.RESET, 1);
 			break;
 		}
 
 		if (locations.rooms[currentRoom].enemy.health <= 0 and locations.rooms[currentRoom].room_Has_Hostile)
 		{
 			locations.rooms[currentRoom].room_Has_Hostile = false;
-			cout << locations.rooms[currentRoom].enemy.death_dialogue << endl << endl;
+			speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + locations.rooms[currentRoom].enemy.death_dialogue + speak.RESET, 1);
 			currentXP += locations.rooms[currentRoom].enemy.xpDrop;
 			continue;
 		}
 
-		if (locations.rooms[currentRoom].room_Has_Hostile)
-		{
-			cout << "You are in combat with " << locations.rooms[currentRoom].enemy.name << "!" << endl << endl;
-			cout << locations.rooms[currentRoom].enemy.name << "'s Health: " << locations.rooms[currentRoom].enemy.health << endl;
-			cout << locations.rooms[currentRoom].enemy.name << "'s Race: " << locations.rooms[currentRoom].enemy.race << endl;
-			cout << locations.rooms[currentRoom].enemy.name << "'s ATK: " << locations.rooms[currentRoom].enemy.base_damage << endl;
-			cout << locations.rooms[currentRoom].enemy.name << "'s LVL: " << locations.rooms[currentRoom].enemy.level << endl << endl;
+if (locations.rooms[currentRoom].room_Has_Hostile)
+{
+    string enemyName = locations.rooms[currentRoom].enemy.name;
 
-			cout << name << "'s HP: " << health << endl;
-			cout << name << "'s RACE: " << race << endl;
-			cout << name << "'s ATK: " << base_damage << endl;
-			cout << name << "'s LVL: " << level << endl << endl;
+    speak.Clear();
 
-			cout << "Tip: Your command set has changed! Use command 'help' to view your options" << endl;
-			cout << "**You cannot move until combat has ended.**" << endl << endl;
-		}
+	if(locations.rooms[currentRoom].enemy.encountered == false)
+	{
+		speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + locations.rooms[currentRoom].enemy.encounter_dialogue + speak.RESET, 1);
+		locations.rooms[currentRoom].enemy.encountered = true;
+	}
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + "* You are in combat with " + enemyName + "! *" + speak.RESET, 1);
+
+	speak.WaitMS(50);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + enemyName + "'s Stats:" + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_RED + " Health: " + to_string(locations.rooms[currentRoom].enemy.health) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_RED + " Race: " + locations.rooms[currentRoom].enemy.race + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_RED + " ATK: " + to_string(locations.rooms[currentRoom].enemy.base_damage) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + " LVL: " + to_string(locations.rooms[currentRoom].enemy.level) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + name + "'s Stats:" + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_CYAN + " HP: " + to_string(health) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_CYAN + " Race: " + race + speak.RESET, 1);
+
+    speak.TypewriterPrintENDL(speak.FG_BRIGHT_CYAN + " ATK: " + to_string(final_damage) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_CYAN + " LVL: " + to_string(level) + speak.RESET, 1);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "Tip: Your command set has changed! Use 'help' to view combat options." + speak.RESET, 1);
+
+    speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_RED + "** You cannot move until combat has ended. **" + speak.RESET, 1);
+}
+
 
 		cout << "What should I do?" << endl << endl;
 
@@ -326,6 +351,8 @@ void Player::Choice()
 					cout << "Total Damage: " << final_damage + bonus_damage << "\n\n";
 
 					input = 1;
+
+					speak.Wait(9999);
 					continue;
 				}
 
@@ -381,6 +408,11 @@ void Player::Choice()
 				}
 
 				cursor = " " + cursor;
+
+
+				cout << speak.FG_BRIGHT_YELLOW + "The closer you get to the center, the more bonus damage that will be added at the end of your attack!" + speak.RESET << endl << endl;
+
+				cout << speak.FG_BRIGHT_YELLOW + "Press any input to stop the cursor!" + speak.RESET << endl << endl;
 
 				cout << cursor;
 				cout << attack_bar;
@@ -445,20 +477,120 @@ void Player::Choice()
 
 		else if (convert.ToUpper(playerChoice) == "COUNTER" and (locations.rooms[currentRoom].room_Has_Hostile == true))
 		{
-			locations.rooms[currentRoom].enemy.adjustHealth(-base_damage);
-
 			int chance = rand() % 2;
 
-			if (chance == 1)
-			{
-				locations.rooms[currentRoom].enemy.adjustHealth(-(base_damage * 2));
-				cout << "Counter Success! (50% chance)" << endl << endl;
-			}
+			string cursor = "	V\n";
+			string attack_bar = "	=====|=====| O |=====|=====\n\n";
+			int bonus_damage = 0;
 
-			else
+			string attackbonustype = "";
+
+			bool input = 0;
+
+			for (int i = 0; i <= 27 and input == 0; i++)
 			{
-				adjustHealth(-locations.rooms[currentRoom].enemy.base_damage);
-				cout << "Counter Failed! (50% chance)" << endl << endl;
+				speak.Clear();
+
+				if (_kbhit())
+				{
+					input == 1;
+				}
+
+				if (_kbhit() and chance == 1 and i >= 11 and i < 15)
+				{
+					_getch();
+
+					locations.rooms[currentRoom].enemy.adjustHealth(-(final_damage + bonus_damage) * 2);
+					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
+
+					speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "Counter Success! (50% chance)\n\n" + attackbonustype + speak.RESET, 1);
+
+					speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "You got " + to_string(bonus_damage) + " extra damage!\n\n" + attackbonustype + speak.RESET, 1);
+
+					speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "Total Damage: " + to_string((final_damage + bonus_damage) * 2) + "\n\n" + speak.RESET, 1);
+
+					speak.Wait(9999);
+
+					input = 1;
+					continue;
+				}
+				if (_kbhit() and chance != 1 or i < 11 and i > 15)
+				{
+					_getch();
+
+					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
+
+					speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "Counter Failure! (50% chance)\n\n" + speak.RESET, 1);
+
+					speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_YELLOW + "You took " + to_string(locations.rooms[currentRoom].enemy.final_damage) + " damage, and skipped your turn!\n\n" + attackbonustype, 1);
+
+					speak.Wait(9999);
+
+					input = 1;
+					continue;
+				}
+
+				cout << i << endl << endl;
+
+				if (i == 0) // reset all back to default at i 0 just in case 
+				{
+					cursor = "V\n";
+					attack_bar = " =====|=====| O |=====|=====\n\n";
+				}
+
+				if (i == 27) // when to reset to 0
+				{
+					i = 0;
+					cursor = "V\n";
+				}
+
+				if (i < 5) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i <= 11 and i > 5) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 11 and i < 15) // crit damage
+				{
+					bonus_damage = 6;
+					attackbonustype = "CRIT HIT!\n\n";
+				}
+
+				if (i >= 15 and i < 21) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 21 and i < 26) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i == 13)// Crit+ damage
+				{
+					bonus_damage = 8;
+					attackbonustype = "CRIT+ HIT!\n\n";
+				}
+
+				cursor = " " + cursor;
+
+
+				cout << speak.FG_BRIGHT_YELLOW + "If you make it close to the center, you will roll a 50/50 chance!\nIf that chance hits, you 2x your damage!" + speak.RESET << endl << endl;
+
+				cout << speak.FG_BRIGHT_YELLOW + "Press any input to stop the cursor!" + speak.RESET << endl << endl;
+
+				cout << cursor;
+				cout << attack_bar;
+				speak.WaitMS_nskp(1);
+
 			}
 
 		}
@@ -475,6 +607,7 @@ void Player::Choice()
 			cout << name << "'s ATK: " << base_damage << endl;
 			cout << name << "'s LVL: " << level << endl << endl;
 
+			displayStats(currentXP);
 		}
 
 		else if (convert.ToUpper(playerChoice) == "USE")
@@ -706,7 +839,7 @@ Player::Player()
 	race = "Human";
 	health = 25;
 	max_health = 100;
-	currentRoom = 2;
+	currentRoom = 1;
 	inventory_size = 6;
 	base_damage = 5;
 
@@ -739,7 +872,7 @@ Player::Player()
 
 	speak.Clear();
 
-	speak.TypewriterPrintENDLENDL(nametag + speak.FG_BRIGHT_CYAN + room_description + speak.RESET, 50);
+	speak.TypewriterPrintENDLENDL(nametag + speak.FG_BRIGHT_CYAN + room_description + speak.RESET, 10);
 
 	speak.Wait(1);
 
