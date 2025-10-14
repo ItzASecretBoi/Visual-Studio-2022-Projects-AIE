@@ -491,7 +491,7 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 
 				cout << cursor;
 				cout << attack_bar;
-				speak.WaitMS_nskp(500);
+				speak.WaitMS_nskp(25);
 				speak.Clear();
 
 				if (reverse)
@@ -622,8 +622,9 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 
 				cout << cursor;
 				cout << attack_bar;
-				speak.WaitMS_nskp(500);
+				speak.WaitMS_nskp(25);
 				speak.Clear();
+
 
 				if (reverse)
 				{
