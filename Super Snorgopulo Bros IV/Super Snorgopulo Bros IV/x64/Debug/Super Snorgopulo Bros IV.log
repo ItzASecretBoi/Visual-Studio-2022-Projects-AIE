@@ -1,3 +1,12 @@
-﻿  main.cpp
-C:\Users\s258049\source\repos\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(113,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Super Snorgopulo Bros IV.vcxproj -> C:\Users\s258049\source\repos\Super Snorgopulo Bros IV\x64\Debug\Super Snorgopulo Bros IV.exe
+﻿  functions.cpp
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\functions.cpp(153,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(114,13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(301,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(301,11): error C2146: syntax error: missing ';' before identifier 'Add'
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(302,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\main.cpp(302,2): error C2447: '{': missing function header (old-style formal list?)
+  Generating Code...
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\functions.cpp(178): warning C4715: 'isStringEqual': not all control paths return a value
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\functions.cpp(446): error C4716: 'XPForNextLevel': must return a value
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\Super Snorgopulo Bros IV\Super Snorgopulo Bros IV\functions.cpp(454): warning C4715: 'levelUP': not all control paths return a value

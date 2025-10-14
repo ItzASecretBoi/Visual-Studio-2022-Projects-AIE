@@ -1,0 +1,96 @@
+		else if (convert.ToUpper(playerChoice) == "ATTACK" and (locations.rooms[currentRoom].room_Has_Hostile == true))
+		{
+			string cursor = "	V\n";
+			string attack_bar = "	=====|=====| O |=====|=====\n\n";
+			int bonus_damage = 0;
+
+			string attackbonustype = "";
+
+			bool input = 0;
+
+			for (int i = 0; i <= 27 and input == 0; i++)
+			{
+
+				if (_kbhit())
+				{
+					_getch();
+
+					locations.rooms[currentRoom].enemy.adjustHealth(-(final_damage + bonus_damage));
+					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
+
+					cout << "You got " << bonus_damage << " extra damage!\n\n" << attackbonustype;
+
+					cout << "Total Damage: " << final_damage + bonus_damage << "\n\n";
+
+					input = 1;
+
+					speak.Wait(9999);
+					continue;
+				}
+
+				speak.Clear();
+				cout << i << endl << endl;
+
+				if (i == 0) // reset all back to default at i 0 just in case 
+				{
+					cursor = "V\n";
+					attack_bar = " =====|=====| O |=====|=====\n\n";
+				}
+
+				if (i == 27) // when to reset to 0
+				{
+					i = 0;
+					cursor = "V\n";
+				}
+
+				if (i < 5) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i <= 11 and i > 5) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 11 and i < 15) // crit damage
+				{
+					bonus_damage = 6;
+					attackbonustype = "CRIT HIT!\n\n";
+				}
+
+				if (i >= 15 and i < 21) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 21 and i < 26) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i == 13)// Crit+ damage
+				{
+					bonus_damage = 8;
+					attackbonustype = "CRIT++ HIT!\n\n";
+				}
+
+				cursor = " " + cursor;
+
+
+				cout << speak.FG_BRIGHT_YELLOW + "The closer you get to the center, the more bonus damage that will be added at the end of your attack!" + speak.RESET << endl << endl;
+
+				cout << speak.FG_BRIGHT_YELLOW + "Press any input to stop the cursor!" + speak.RESET << endl << endl;
+
+				cout << cursor;
+				cout << attack_bar;
+
+
+			}
+
+			continue;
+		}

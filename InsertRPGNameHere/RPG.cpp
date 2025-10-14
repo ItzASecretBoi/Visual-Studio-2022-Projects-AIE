@@ -326,103 +326,6 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 			continue;
 		}
 
-		else if (convert.ToUpper(playerChoice) == "ATTACK" and (locations.rooms[currentRoom].room_Has_Hostile == true))
-		{
-			string cursor = "	V\n";
-			string attack_bar = "	=====|=====| O |=====|=====\n\n";
-			int bonus_damage = 0;
-
-			string attackbonustype = "";
-
-			bool input = 0;
-
-			for(int i = 0; i <= 27 and input == 0; i++)
-			{
-
-				if (_kbhit())
-				{
-					_getch();
-
-					locations.rooms[currentRoom].enemy.adjustHealth(-(final_damage + bonus_damage));
-					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
-
-					cout << "You got " << bonus_damage << " extra damage!\n\n" << attackbonustype;
-
-					cout << "Total Damage: " << final_damage + bonus_damage << "\n\n";
-
-					input = 1;
-
-					speak.Wait(9999);
-					continue;
-				}
-
-				speak.Clear();
-				cout << i << endl << endl;
-
-				if (i == 0) // reset all back to default at i 0 just in case 
-				{
-					cursor = "V\n";
-					attack_bar = " =====|=====| O |=====|=====\n\n";
-				}
-
-				if(i == 27) // when to reset to 0
-				{
-					i = 0;
-					cursor = "V\n";
-				}
-
-				if(i < 5) // dookie damage
-				{
-					bonus_damage = 0;
-					attackbonustype = "GARBAGE HIT!\n\n";
-				}
-
-				if (i <= 11 and i > 5) // ok damage
-				{
-					bonus_damage = 2;
-					attackbonustype = "OK HIT!\n\n";
-				}
-
-				if (i >= 11 and i < 15) // crit damage
-				{
-					bonus_damage = 6;
-					attackbonustype = "CRIT HIT!\n\n";
-				}
-
-				if (i >= 15 and i < 21) // ok damage
-				{
-					bonus_damage = 2;
-					attackbonustype = "OK HIT!\n\n";
-				}
-
-				if (i >= 21 and i < 26) // dookie damage
-				{
-					bonus_damage = 0;
-					attackbonustype = "GARBAGE HIT!\n\n";
-				}
-
-				if (i == 13)// Crit+ damage
-				{
-					bonus_damage = 8;
-					attackbonustype = "CRIT++ HIT!\n\n";
-				}
-
-				cursor = " " + cursor;
-
-
-				cout << speak.FG_BRIGHT_YELLOW + "The closer you get to the center, the more bonus damage that will be added at the end of your attack!" + speak.RESET << endl << endl;
-
-				cout << speak.FG_BRIGHT_YELLOW + "Press any input to stop the cursor!" + speak.RESET << endl << endl;
-
-				cout << cursor;
-				cout << attack_bar;
-				speak.WaitMS_nskp(1);
-
-			}
-
-			continue;
-		}
-
 		else if (convert.ToUpper(playerChoice) == "GO SOUTH" and (locations.rooms[currentRoom].room_Has_Hostile == false))
 		{
 			changeCurrentRoom(2);
@@ -474,27 +377,154 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 
 		}
 
-
-		else if (convert.ToUpper(playerChoice) == "COUNTER" and (locations.rooms[currentRoom].room_Has_Hostile == true))
+		else if (convert.ToUpper(playerChoice) == "ATTACK" and (locations.rooms[currentRoom].room_Has_Hostile == true))
 		{
 			int chance = rand() % 2;
+			//0  1  2  3  4  5  6  7  8  9  10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+			//=  =  =  =  =  |  =  =  =  =  =   |     O     |  =  =  =  =  =  |  =  =  =  =  =
 
-			string cursor = "	V\n";
+			string cursor = "V\n";
 			string attack_bar = "	=====|=====| O |=====|=====\n\n";
 			int bonus_damage = 0;
-
 			string attackbonustype = "";
-
 			bool input = 0;
+			bool reverse = false;
+			string ogCursor = cursor;
 
 			for (int i = 0; i <= 27 and input == 0; i++)
 			{
-				speak.Clear();
+				cursor = ogCursor;
 
 				if (_kbhit())
 				{
 					input == 1;
 				}
+
+
+				if (_kbhit())
+				{
+					_getch();
+
+					locations.rooms[currentRoom].enemy.adjustHealth(-(final_damage + bonus_damage));
+					adjustHealth(-locations.rooms[currentRoom].enemy.final_damage);
+
+					cout << "You got " << bonus_damage << " extra damage!\n\n" << attackbonustype;
+
+					cout << "Total Damage: " << final_damage + bonus_damage << "\n\n";
+
+					input = 1;
+
+					speak.Wait(9999);
+					continue;
+				}
+
+				cout << i << endl << endl;
+
+				if (i == 0) // reset all back to default at i 0 just in case 
+				{
+					reverse = false;
+					cursor = "V\n";
+					attack_bar = " =====|=====| O |=====|=====\n\n";
+				}
+
+				if (i == 27) // when to reset to 0
+				{
+					reverse = true;
+					cursor = "V\n";
+				}
+
+				if (i < 5) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i <= 11 and i > 5) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 11 and i < 16) // crit damage
+				{
+					if (i == 14) // Crit+ damage
+						{
+							bonus_damage = 8;
+							attackbonustype = "CRIT+ HIT!\n\n";
+						}
+					else
+					{
+						bonus_damage = 6;
+						attackbonustype = "CRIT HIT!\n\n";
+					}
+				}
+
+				if (i >= 16 and i < 21) // ok damage
+				{
+					bonus_damage = 2;
+					attackbonustype = "OK HIT!\n\n";
+				}
+
+				if (i >= 21 and i < 26) // dookie damage
+				{
+					bonus_damage = 0;
+					attackbonustype = "GARBAGE HIT!\n\n";
+				}
+
+				if (i == 13)// Crit+ damage
+				{
+					bonus_damage = 8;
+					attackbonustype = "CRIT+ HIT!\n\n";
+				}
+				string e = "";
+
+				for (int x = 0; x != i; x++)
+				{
+					e = e + " ";
+				}
+				cursor = e + cursor;
+
+
+				cout << speak.FG_BRIGHT_YELLOW + "If you make it close to the center, you will roll a 50/50 chance!\nIf that chance hits, you 2x your damage!" + speak.RESET << endl << endl;
+
+				cout << speak.FG_BRIGHT_YELLOW + "Press any input to stop the cursor!" + speak.RESET << endl << endl;
+
+				cout << cursor;
+				cout << attack_bar;
+				speak.WaitMS_nskp(500);
+				speak.Clear();
+
+				if (reverse)
+				{
+					i = i - 2;
+				}
+			}
+
+		}
+
+		else if (convert.ToUpper(playerChoice) == "COUNTER" and (locations.rooms[currentRoom].room_Has_Hostile == true))
+		{
+			int chance = rand() % 2;
+			//0  1  2  3  4  5  6  7  8  9  10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+			//=  =  =  =  =  |  =  =  =  =  =   |     O     |  =  =  =  =  =  |  =  =  =  =  =
+
+			string cursor = "V\n";
+			string attack_bar = "	=====|=====| O |=====|=====\n\n";
+			int bonus_damage = 0;
+			string attackbonustype = "";
+			bool input = 0;
+			bool reverse = false;
+			string ogCursor = cursor;
+
+			for (int i = 0; i <= 27 and input == 0; i++)
+			{
+				cursor = ogCursor;
+
+				if (_kbhit())
+				{
+					input == 1;
+				}
+
 
 				if (_kbhit() and chance == 1 and i >= 11 and i < 15)
 				{
@@ -534,53 +564,56 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 
 				if (i == 0) // reset all back to default at i 0 just in case 
 				{
+					reverse = false;
 					cursor = "V\n";
 					attack_bar = " =====|=====| O |=====|=====\n\n";
 				}
 
-				if (i == 27) // when to reset to 0
+				else if (i == 27) // when to reset to 0
 				{
-					i = 0;
+					reverse = true; 
 					cursor = "V\n";
 				}
 
-				if (i < 5) // dookie damage
+				else if (i <= 5 || i >= 21) // dookie damage
 				{
 					bonus_damage = 0;
 					attackbonustype = "GARBAGE HIT!\n\n";
 				}
 
-				if (i <= 11 and i > 5) // ok damage
+				else if (i <= 11 and i > 5) // ok damage
 				{
 					bonus_damage = 2;
 					attackbonustype = "OK HIT!\n\n";
 				}
 
-				if (i >= 11 and i < 15) // crit damage
+				else if (i > 11 and i < 15) // crit damage
 				{
+					
 					bonus_damage = 6;
 					attackbonustype = "CRIT HIT!\n\n";
 				}
 
-				if (i >= 15 and i < 21) // ok damage
+				else if (i >= 15 and i < 21) // ok damage
 				{
 					bonus_damage = 2;
 					attackbonustype = "OK HIT!\n\n";
 				}
 
-				if (i >= 21 and i < 26) // dookie damage
-				{
-					bonus_damage = 0;
-					attackbonustype = "GARBAGE HIT!\n\n";
-				}
+				//else if (i >= 21 and i < 26) // dookie damage
+				//{
+				//	bonus_damage = 0;
+				//	attackbonustype = "GARBAGE HIT!\n\n";
+				//}
 
-				if (i == 13)// Crit+ damage
-				{
-					bonus_damage = 8;
-					attackbonustype = "CRIT+ HIT!\n\n";
-				}
+				
+				string e = "";
 
-				cursor = " " + cursor;
+				for (int x = 0; x != i; x++)
+				{
+					e = e + " ";
+				}
+				cursor = e + cursor;
 
 
 				cout << speak.FG_BRIGHT_YELLOW + "If you make it close to the center, you will roll a 50/50 chance!\nIf that chance hits, you 2x your damage!" + speak.RESET << endl << endl;
@@ -589,8 +622,13 @@ if (locations.rooms[currentRoom].room_Has_Hostile)
 
 				cout << cursor;
 				cout << attack_bar;
-				speak.WaitMS_nskp(1);
+				speak.WaitMS_nskp(500);
+				speak.Clear();
 
+				if (reverse)
+				{
+					i = i - 2;
+				}
 			}
 
 		}
@@ -839,7 +877,7 @@ Player::Player()
 	race = "Human";
 	health = 25;
 	max_health = 100;
-	currentRoom = 1;
+	currentRoom = 2;
 	inventory_size = 6;
 	base_damage = 5;
 
@@ -854,11 +892,11 @@ Player::Player()
 
 	speak.TypewriterPrintENDLENDL(speak.RESET + nametag + speak.FG_BRIGHT_GREEN + "*You wake up...*" + speak.RESET, 1);
 
-	speak.Wait(1);
+	speak.WaitMS(800);
 
 	speak.Clear();
 
-	speak.Wait(1);
+	speak.WaitMS(800);
 
 	speak.TypewriterPrint(nametag + speak.FG_BRIGHT_CYAN + "Agh, my head is " + speak.RESET, 20);
 
@@ -899,6 +937,8 @@ Player::Player()
 	speak.TypewriterPrintENDL(speak.FG_BRIGHT_CYAN + nametag + "Oh right! I'm " + name + "." + speak.RESET, 20);
 	speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_CYAN + "I can't believe I almost forgot that..." + speak.RESET, 20);
 
+	speak.TypewriterPrintENDLENDL(speak.FG_BRIGHT_WHITE + "I have to " + speak.BG_BRIGHT_GREEN + "learn about my past" + speak.RESET + speak.FG_BRIGHT_WHITE + ", and  " + speak.BG_BRIGHT_GREEN + "find out how I got here" + speak.RESET + "...", 20);
+
 	cout << speak.FG_BRIGHT_YELLOW + "Commands:" + speak.RESET << endl;
 	cout << speak.FG_BRIGHT_YELLOW + "go north" + speak.RESET << endl;
 	cout << speak.FG_BRIGHT_YELLOW +  "go south" + speak.RESET << endl;
@@ -908,6 +948,9 @@ Player::Player()
 	cout << speak.FG_BRIGHT_YELLOW + "inspect self" + speak.RESET << endl;
 	cout << speak.FG_BRIGHT_YELLOW + "help" + speak.RESET << endl;
 	cout << speak.FG_BRIGHT_YELLOW +  "exit" + speak.RESET << endl << endl;
+	cout << speak.FG_BRIGHT_YELLOW + "Combat Commands:" + speak.RESET << endl;
+	cout << speak.FG_BRIGHT_YELLOW + "attack" + speak.RESET << endl;
+	cout << speak.FG_BRIGHT_YELLOW + "counter" + speak.RESET << endl << endl;
 
 	Choice();
 }

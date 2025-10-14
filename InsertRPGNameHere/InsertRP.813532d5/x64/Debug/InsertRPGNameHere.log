@@ -8,13 +8,14 @@ C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\
 C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(240,10): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
 C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(259,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(259,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(346,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(347,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(496,12): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(503,85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(504,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(521,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(610,17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(834,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(835,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(400,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(408,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(409,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(525,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(533,85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(534,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(551,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(648,17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(872,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\RPG.cpp(873,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   InsertRPGNameHere.vcxproj -> C:\Users\s258049\source\repos\Visual-Studio-2022-Projects-AIE\InsertRPGNameHere\x64\Debug\InsertRPGNameHere.exe

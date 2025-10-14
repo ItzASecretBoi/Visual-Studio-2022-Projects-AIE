@@ -1,6 +1,7 @@
 #include <iostream>
 #include "function.h"
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -296,6 +297,11 @@ int playerChoice;
 			cout << "You Swung A Sword!" << endl << endl;
 		}
 	};
+
+	Vector2D Add(Vector2D a, Vector2D)
+	{
+	
+	}
 
 int main()
 {	
